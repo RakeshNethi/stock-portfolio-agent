@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────
+# Agent Settings
+# Controls scheduling, analysis, and delivery
+# ─────────────────────────────────────────────
+
+schedule:
+  morning:
+    time: "06:30"
+    timezone: "America/Chicago"
+    description: "Pre-market briefing with overnight movers, news, and key levels"
+  evening:
+    time: "19:00"
+    timezone: "America/Chicago"
+    description: "Post-market recap with day performance, earnings results, and next-day preview"
+
+notifications:
+  email:
+    enabled: true
+    to: "rakesh@example.com"
+    from: "portfolio-agent@yourdomain.com"
+  telegram:
+    enabled: false
+    chat_id: ""
+
+analysis:
+  technical_indicators:
+    - rsi_14         # Relative Strength Index (14-period)
+    - macd           # MACD line, signal line, histogram
+    - sma_50         # 50-day Simple Moving Average
+    - sma_200        # 200-day Simple Moving Average
+    - bollinger_bands # Bollinger Bands (20-period, 2 std dev)
+  
+  # How far back/forward to check earnings
+  earnings_lookback_days: 7
+  earnings_lookahead_days: 7
+  
+  # Max news headlines per stock
+  news_max_per_stock: 5
+
+llm:
+  model: "gemini-2.0-flash"
+  temperature: 0.3
+  max_output_tokens: 4096
+  max_retries: 1
+
+# Thresholds for alerts
+alerts:
+  price_change_threshold: 3.0    # Alert if stock moves > 3% in a day
+  rsi_overbought: 70             # RSI above this = overbought warning
+  rsi_oversold: 30               # RSI below this = oversold opportunity
+  volume_spike_multiplier: 2.0   # Alert if volume > 2x average

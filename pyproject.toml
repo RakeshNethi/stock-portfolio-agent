@@ -1,0 +1,54 @@
+[project]
+name = "stock-portfolio-agent"
+version = "0.1.0"
+description = "AI-powered stock portfolio monitoring agent with daily briefings, earnings alerts, and technical analysis."
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Rakesh Nethi"}
+]
+
+dependencies = [
+    "langgraph>=0.4.0",
+    "langchain-google-genai>=2.1.0",
+    "langchain-core>=0.3.0",
+    "pydantic>=2.10.0",
+    "pyyaml>=6.0",
+    "httpx>=0.28.0",
+    "jinja2>=3.1.0",
+    "sendgrid>=6.11.0",
+    "python-dotenv>=1.1.0",
+    "google-cloud-secret-manager>=2.21.0",
+    "google-cloud-storage>=2.19.0",
+    "structlog>=24.4.0",
+    "tenacity>=9.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.0",
+    "respx>=0.22.0",
+]
+
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

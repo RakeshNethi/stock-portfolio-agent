@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────
+# Portfolio Configuration
+# Define your brokerage accounts and holdings
+# ─────────────────────────────────────────────
+
+accounts:
+  - name: "Primary Brokerage"
+    broker: "robinhood"
+    holdings:
+      - ticker: "AAPL"
+        shares: 50
+        cost_basis: 178.25
+      - ticker: "NVDA"
+        shares: 30
+        cost_basis: 485.50
+      - ticker: "MSFT"
+        shares: 25
+        cost_basis: 380.00
+      - ticker: "GOOGL"
+        shares: 20
+        cost_basis: 140.75
+
+  - name: "Retirement - Roth IRA"
+    broker: "fidelity"
+    holdings:
+      - ticker: "VOO"
+        shares: 100
+        cost_basis: 420.00
+      - ticker: "QQQ"
+        shares: 50
+        cost_basis: 380.00
+
+# Additional stocks you want to track but don't own
+watchlist:
+  - "TSLA"
+  - "AMD"
+  - "AMZN"
+  - "META"
