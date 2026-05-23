@@ -21,7 +21,7 @@ accounts:
         cost_basis: 140.75
 
   - name: "Retirement - Roth IRA"
-    broker: "fidelity"
+    broker: "robinhood"
     holdings:
       - ticker: "VOO"
         shares: 100
